@@ -99,3 +99,31 @@ plt.legend()
 plt.grid(True)
 plt.savefig("images/Figure_1.png")
 plt.show()
+🚀 How to Run This Project:
+
+Install Dependencies
+
+pip install yfinance pandas numpy scikit-learn matplotlib
+
+
+Run the Script
+
+python predict_next_day_close.py
+
+
+Result
+
+A plot Figure_1.png will be generated in the images/ folder.
+
+The console will show predicted next-day closing prices for both Linear Regression and Random Forest.
+
+📈 Example Console Output:
+
+Downloaded 1250 rows for AAPL
+LinearRegression -> MAE: 2.56, RMSE: 3.10
+RandomForest -> MAE: 1.85, RMSE: 2.45
+Last available date: 2025-11-27
+Predicted next-day Close (LinearRegression): 175.32
+Predicted next-day Close (RandomForest):    176.05
+
+
