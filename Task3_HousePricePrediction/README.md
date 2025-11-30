@@ -1,135 +1,42 @@
-# Task 6 — House Price Prediction 🏡
+🏡 Task 6: House Price Prediction
 
-> **AI/ML Internship – Task 6**  
-> Predict house prices using property features like size, number of bedrooms, and location.  
-> This repository contains a complete pipeline: data loading, preprocessing, feature engineering, model training, evaluation (MAE, RMSE), feature importance, and prediction visualization.
+AI/ML Internship Project
+Predict house prices using machine learning based on property features such as size, bedrooms, and location.
 
----
-
-## 🔎 Project Overview
-
-**Goal:** Build a regression model that predicts house prices based on property features.
-
-**Main steps implemented:**
-1. Load dataset (`data/house_prices.csv`)
-2. Data preprocessing:
-   - Handle missing values
-   - Encode categorical features (city/location)
-   - Scale numerical features
-3. Train regression models:
-   - Linear Regression
-   - Gradient Boosting Regressor
-4. Evaluate model performance using:
-   - Mean Absolute Error (MAE)
-   - Root Mean Squared Error (RMSE)
-5. Generate visualizations:
-   - Actual vs Predicted Prices (`images/actual_vs_predicted.png`)
-   - Feature Importance (`images/feature_importances.png`)
-6. Save trained models in `models/`
-
----
-
-## 📁 Repository Structure
-
+📂 Project Structure
 HousePricePrediction/
 ├── data/
-│ └── house_prices.csv
+│   └── house_prices.csv         # Dataset for house prices
 ├── images/
-│ ├── actual_vs_predicted.png
-│ └── feature_importances.png
+│   ├── actual_vs_predicted.png  # Scatter plot of predicted vs actual prices
+│   └── feature_importances.png  # Bar plot showing important features
 ├── models/
-├── predict_house_price.py
-├── requirements.txt
-└── README.md ← (this file)
+│   └── house_price_model.pkl    # Saved trained model
+├── predict_house_price.py       # Main script to run the project
+├── requirements.txt             # Python dependencies
+└── README.md                    # This file
 
-yaml
-Copy code
+🔍 Project Overview
 
----
+Goal: Build a regression model to predict house prices based on features like square footage, number of bedrooms, bathrooms, and city.
 
-## 🛠️ Requirements
+Key Steps Implemented:
 
-Create and activate a virtual environment:
+Load dataset from data/house_prices.csv.
 
-```bash
-python3 -m venv venv
-source venv/bin/activate        # Linux / macOS
-# .\venv\Scripts\activate      # Windows PowerShell
-Install dependencies:
+Inspect dataset and handle missing values.
 
-bash
-Copy code
-pip install -r requirements.txt
-Example requirements.txt:
+Encode categorical features (e.g., city).
 
+Split dataset into training and testing sets.
 
-shell
-Copy code
-pandas>=2.0,<3
-numpy>=1.24,<2
-scikit-learn>=1.2,<2
-matplotlib>=3.5,<4
-seaborn>=0.12,<1
-joblib>=1.2
-📥 Dataset
-House Price Dataset (data/house_prices.csv)
-Columns include:
-
-
-Copy code
-square_feet, bedrooms, bathrooms, city, price
-Make sure the target column is named price.
-
-
-
-▶️ Run the pipeline
-bash
-Copy code
-source venv/bin/activate
-python3 predict_house_price.py
-This will:
-
-Print dataset shape, column types, and missing value summary
-
-Preprocess features
-
-Train regression models
-
-Print MAE and RMSE
-
-Save plots in images/
-
-Save trained model in models/
-
-
-
-📷 Visualizations
-images/actual_vs_predicted.png — scatter plot comparing predicted vs actual prices
-
-images/feature_importances.png — bar plot showing most important features for price prediction
-
-(Replace placeholders with images generated after running the script.)
-
-🧠 Model Training Steps
-Load CSV into pandas DataFrame.
-
-Inspect data: df.head(), df.info(), df.describe().
-
-Handle missing values.
-
-Encode categorical variables (e.g., city → one-hot encoding).
-
-Split dataset into X (features) and y (target price).
-
-Train/test split (e.g., 80/20).
-
-Train models:
+Train regression models:
 
 Linear Regression
 
 Gradient Boosting Regressor
 
-Evaluate performance using:
+Evaluate models using:
 
 Mean Absolute Error (MAE)
 
@@ -137,16 +44,103 @@ Root Mean Squared Error (RMSE)
 
 Visualize results:
 
-Actual vs Predicted prices scatter plot
+Actual vs Predicted Prices
 
-Feature importance bar chart
+Feature Importance
 
-Save trained models with joblib.
+Save trained models and plots for later use.
 
-🧰 Tips / Troubleshooting
-ModuleNotFoundError → Make sure venv is activated and dependencies installed.
+🛠️ Step 1: Install Dependencies
 
-Missing price column → Rename your dataset column to price.
+Create and activate a virtual environment:
 
-Incorrect visualization → Ensure images/ folder exists and script has write permissions.
+python3 -m venv venv
+source venv/bin/activate       # Linux/macOS
+# .\venv\Scripts\activate     # Windows
 
+
+Install required Python packages:
+
+pip install -r requirements.txt
+
+
+Example requirements.txt:
+
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.2
+matplotlib>=3.5
+seaborn>=0.12
+joblib>=1.2
+
+📥 Step 2: Load and Inspect Dataset
+
+The dataset should be located in data/house_prices.csv.
+Typical columns:
+
+Column	Description
+square_feet	House size in square feet
+bedrooms	Number of bedrooms
+bathrooms	Number of bathrooms
+city	House location
+price	Target variable (house price)
+
+Run the script to check dataset info:
+
+python3 predict_house_price.py
+
+
+Output includes:
+
+Dataset shape
+
+Column types
+
+Missing values per column
+
+🔧 Step 3: Data Preprocessing
+
+The script handles:
+
+Missing values (if any)
+
+Categorical encoding for city
+
+Feature scaling for numerical data
+
+Separating features (X) and target (y)
+
+🧠 Step 4: Train Regression Models
+
+Models trained:
+
+Linear Regression
+
+Gradient Boosting Regressor
+
+📊 Step 5: Evaluate Models
+
+Metrics calculated:
+
+Mean Absolute Error (MAE)
+
+Root Mean Squared Error (RMSE)
+
+Plots generated:
+
+images/actual_vs_predicted.png — Scatter plot of predicted vs actual prices
+
+images/feature_importances.png — Feature importance for Gradient Boosting model
+
+▶️ Step 6: Run the Project
+source venv/bin/activate
+python3 predict_house_price.py
+
+
+Script outputs:
+
+Model evaluation metrics
+
+Saved plots in images/
+
+Saved trained model in models/house_price_model.pkl
