@@ -3,19 +3,6 @@
 AI/ML Internship Project
 Predict house prices using machine learning based on property features such as size, bedrooms, and location.
 
-📂 Project Structure
-HousePricePrediction/
-├── data/
-│   └── house_prices.csv         # Dataset for house prices
-├── images/
-│   ├── actual_vs_predicted.png  # Scatter plot of predicted vs actual prices
-│   └── feature_importances.png  # Bar plot showing important features
-├── models/
-│   └── house_price_model.pkl    # Saved trained model
-├── predict_house_price.py       # Main script to run the project
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
-
 🔍 Project Overview
 
 Goal: Build a regression model to predict house prices based on features like square footage, number of bedrooms, bathrooms, and city.
