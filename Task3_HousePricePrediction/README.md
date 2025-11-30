@@ -1,4 +1,4 @@
-** # Task 6 — House Price Prediction** 🏡
+# Task 6 — House Price Prediction 🏡
 
 > **AI/ML Internship – Task 6**  
 > Predict house prices using property features like size, number of bedrooms, and location.  
@@ -62,6 +62,7 @@ Copy code
 pip install -r requirements.txt
 Example requirements.txt:
 
+
 shell
 Copy code
 pandas>=2.0,<3
@@ -74,9 +75,12 @@ joblib>=1.2
 House Price Dataset (data/house_prices.csv)
 Columns include:
 
+
 Copy code
 square_feet, bedrooms, bathrooms, city, price
 Make sure the target column is named price.
+
+
 
 ▶️ Run the pipeline
 bash
@@ -96,6 +100,8 @@ Print MAE and RMSE
 Save plots in images/
 
 Save trained model in models/
+
+
 
 📷 Visualizations
 images/actual_vs_predicted.png — scatter plot comparing predicted vs actual prices
